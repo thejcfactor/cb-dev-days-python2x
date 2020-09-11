@@ -1,0 +1,35 @@
+mkvirtualenv cbdd-python-2x --python=/usr/local/bin/python3
+
+settings.json (Code > Preferences > Workspace > just find an option to edit in settings.json (Workbench seems to be a good starting point))
+    "python.pythonPath": "~/.virtualenvs/cbdd-python-2x/bin/python"
+
+requirements
+    flask
+    flask-cors
+    gunicorn
+    pylint
+    flasgger
+    couchbase (pip install couchbase==2.5.12)
+    pyjwt
+    bcrypt
+    configparser
+
+    make sure on virtual environment!!!
+        pip freeze > requirements.txt
+        pip install -r requirements.txt
+
+Research
+    Flasgger w/ auth:
+        https://stackoverflow.com/questions/45466797/how-to-tune-flasgger-in-order-to-use-basic-authentication-in-sending-requests
+
+    middleware:
+        https://medium.com/swlh/creating-middlewares-with-python-flask-166bd03f2fd4
+    
+    singleton:
+        https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Singleton.html
+
+    decorators:
+        https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
+
+    flask globals object:
+        https://stackoverflow.com/questions/22256862/flask-how-to-store-and-retrieve-a-value-bound-to-the-request/22256956

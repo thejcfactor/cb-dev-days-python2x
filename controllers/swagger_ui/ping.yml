@@ -1,0 +1,32 @@
+Ping database
+---
+summary:  Ping database using health check API
+tags:
+  - test
+consumes:
+  - application/json
+produces:
+  - application/json
+
+definitions:
+  Response:
+    type: object
+    properties:
+      data:
+        type: object
+      message:
+        type: string
+      error:
+        type: object
+      authorized:
+        type: boolean
+
+responses:
+  200:
+    description: response object
+    schema:
+      $ref: '#/definitions/Response'
+  500:
+    description: Error trying to ping database
+    schema:
+      $ref: '#/definitions/Response'

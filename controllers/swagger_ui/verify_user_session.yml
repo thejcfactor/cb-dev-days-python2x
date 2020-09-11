@@ -1,0 +1,38 @@
+Verify current user session using JWT
+---
+summary:  Verifies user session.
+tags:
+  - User
+consumes:
+  - application/json
+produces:
+  - application/json
+security:
+  - bearerAuth: []
+
+definitions:
+  Response:
+    type: object
+    properties:
+      data:
+        type: object
+      message:
+        type: string
+      error:
+        type: object
+      authorized:
+        type: boolean
+
+responses:
+  200:
+    description: response object
+    schema:
+      $ref: '#/definitions/Response'
+  401:
+    description: Unauthorized - invalid token
+    schema:
+      $ref: '#/definitions/Response'
+  500:
+    description: Error trying to ping database
+    schema:
+      $ref: '#/definitions/Response'
